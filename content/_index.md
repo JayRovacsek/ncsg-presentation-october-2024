@@ -53,7 +53,7 @@ Covering: An overview of technical challenges and solutions
 
 ### Forward: Windows
 
-May is likely to be possible to do this on Windows, I haven't played in this space
+It is likely possible to do this on Windows, But I haven't played in this space
 
 ---
 
