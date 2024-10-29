@@ -9,11 +9,15 @@ mediaType = "text/html"
 isHTML = true
 
 [params.reveal_hugo]
-history = true
 hideInactiveCursor = true
-theme = "blood"
+highlight_theme = "tomorrow-night-blue"
+history = true
 slide_number = true
+theme = "blood"
 transition_speed = 'fast'
+
+[markup.highlight]
+codeFences = false
 
 [markup.goldmark.extensions.extras.superscript]
 enable = true

@@ -35,13 +35,13 @@ Covering: An introduction to the concept
 
 Why Use Them?
 
-Covering: Key benefits, risks, and real-world applications
+Covering: Key benefits, risks, and real-world examples
 
 ---
 
 ### Agenda ⚡️
 
-How to Build and Manage Amnesiac Systems
+Building Amnesiac Systems
 
 Covering: An overview of technical challenges and solutions
 
@@ -65,15 +65,17 @@ A system that intentionally does not persist data, either fully or partially
 
 ## What Is An Amnesiac System?
 
-![tails-os](images/tails-os.svg)
-![aws lambda](images/lambda.svg)
-![tails-os](images/docker.svg)
+* Tails- OS
+* AWS Lambda
+* Docker
+
+Any more people might know of? (there's a lot)
 
 ---
 
 ### Approaches to Amnesia
 
-All previous examples were generally amnesic by utilising RAM to store data
+All previous examples were generally amnesic because they utilise RAM to store data
 
 ---
 
@@ -86,6 +88,8 @@ All previous examples were generally amnesic by utilising RAM to store data
 - ZFS snapshots
 - BTRFS subvolumes
 
+But RAM is the simplest approach
+
 ---
 
 ~What Are Amnesiac Systems~ ✅
@@ -94,7 +98,7 @@ All previous examples were generally amnesic by utilising RAM to store data
 
 ---
 
-Why Use Them?
+## Why Use Them?
 
 ---
 
@@ -107,8 +111,6 @@ Far more than just hiding questionable things
 {{< slide background-image="images/messy-home.png" >}}
 
 ---
-
-<!-- {{< slide background-image="images/shell-hell.png" >}} -->
 
 {{< slide background-color="#002450" >}}
 
@@ -124,7 +126,33 @@ Far more than just hiding questionable things
 
 ---
 
-## How to Build and Manage Amnesiac Systems
+Beyond Repeatability & Reproducibility:
+
+* nerd points (unlimited)
+* performance (with limitations)
+* security (with limitations)
+
+![works on my machine](images/nerd.gif)
+
+---
+
+## Risks
+
+Risk of data loss leading to...
+
+---
+
+![cranky bear](images/cranky-bear.png)
+
+---
+
+## Real-World Examples
+
+VPN Providers using RAM-only infrastructure ([1](https://mullvad.net/en/blog/we-have-successfully-completed-our-migration-to-ram-only-vpn-infrastructure), [2](https://nordvpn.com/blog/ram-based-servers/), [3](https://surfshark.com/blog/surfshark-upgraded-to-ram-only-servers))
+
+---
+
+## Building Amnesiac Systems
 
 ---
 
@@ -137,23 +165,65 @@ Let's talk on two deployment types:
 
 ### Not Our Machine
 
-Cattle vs Pets
+Cattle 🐮 vs Pets 🐶
 
 ---
 
 Or, most people enjoy a good hamburger
 
+![hamburger](images/hamburger.gif)
+
 ---
 
-Generally, docker, serverless et al is a safe bet here
+Generally, docker, serverless, et al is a safe bet here
 
 State can exist externally
+
+![docker](images/docker.svg)
 
 ---
 
 Unless you need to host the whole stack...
 
-(Pets at some level)
+(Pets at some level 🧙)
+
+---
+
+### Self Managed Considerations
+
+* Infrastructure as Code 🧑‍💻️
+* Ship logs off devices 🪵
+* Automate Refreshes ♻️
+* Apply RBAC (limit regression chance) 👮
+* Educate admins on design 🧑‍🏫️
+
+---
+
+### tmpfs Root As A Solution
+
+An example of a 2GB tmpfs root mount
+
+```
+none / tmpfs x-initrd.mount,defaults,mode=755,size=2G,defaults,mode=755 0 0
+```
+
+![fstab](images/fstab.png)
+
+---
+
+## Our Machine
+
+Less risk of cranky bears
+
+---
+
+### Home Directories
+
+Can be tmpfs'd as well
+
+![tmpfs](images/tmpfs.png)
+
+Otherwise - treat the device as cattle, not a pet
 
 ---
 
