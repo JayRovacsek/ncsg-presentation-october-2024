@@ -48,6 +48,19 @@
               ''
             );
           };
+
+          convert-images = {
+            type = "app";
+            program = builtins.toString (
+              pkgs.writers.writeBash "convert" ''
+                ${pkgs.findutils}/bin/find content -type f -name "*.jpg" -exec ${pkgs.imagemagick}/bin/mogrify -format png {} \;
+                ${pkgs.findutils}/bin/find content -type f -name "*.jpg" -exec ${pkgs.coreutils}/bin/rm {} \;
+                ${pkgs.findutils}/bin/find content -type f -name "*.webp" -exec ${pkgs.imagemagick}/bin/mogrify -format png {} \;
+                ${pkgs.findutils}/bin/find content -type f -name "*.webp" -exec ${pkgs.coreutils}/bin/rm {} \;
+              ''
+            );
+          };
+
           develop = {
             type = "app";
             program = builtins.toString (
@@ -119,6 +132,7 @@
             git-cliff
             go
             hugo
+            imagemagick
             lix
             nixfmt-rfc-style
             nodePackages.prettier

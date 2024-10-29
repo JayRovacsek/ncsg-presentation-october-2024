@@ -40,3 +40,4 @@ hugo.linux
 
 # Go workspace file
 go.work
+.DS_Store
