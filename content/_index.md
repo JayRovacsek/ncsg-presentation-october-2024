@@ -65,9 +65,9 @@ A system that intentionally does not persist data, either fully or partially
 
 ## What Is An Amnesiac System?
 
-* Tails- OS
-* AWS Lambda
-* Docker
+- Tails- OS
+- AWS Lambda
+- Docker
 
 Any more people might know of? (there's a lot)
 
@@ -128,9 +128,9 @@ Far more than just hiding questionable things
 
 Beyond Repeatability & Reproducibility:
 
-* nerd points (unlimited)
-* performance (with limitations)
-* security (with limitations)
+- nerd points (unlimited)
+- performance (with limitations)
+- security (with limitations)
 
 ![works on my machine](images/nerd.gif)
 
@@ -191,11 +191,11 @@ Unless you need to host the whole stack...
 
 ### Self Managed Considerations
 
-* Infrastructure as Code 🧑‍💻️
-* Ship logs off devices 🪵
-* Automate Refreshes ♻️
-* Apply RBAC (limit regression chance) 👮
-* Educate admins on design 🧑‍🏫️
+- Infrastructure as Code 🧑‍💻️
+- Ship logs off devices 🪵
+- Automate Refreshes ♻️
+- Apply RBAC (limit regression chance) 👮
+- Educate admins on design 🧑‍🏫️
 
 ---
 
